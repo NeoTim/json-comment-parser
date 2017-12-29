@@ -15,10 +15,9 @@ const code = `
         status: "DELETED" // book status
       }
     ],
-    code: "OK" // Business Code
+    "code": "OK", // Business Code
   }
 `;
 
 // const r = f(parse(code));
-parse(code);
-// console.log(parse(code));
+console.log(parse(code));
