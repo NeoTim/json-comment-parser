@@ -1,7 +1,6 @@
 'use strict';
 
-const { parse } = require('../lib');
-// const f = data => JSON.stringify(data, null, 2);
+const { parse, stringify } = require('../lib');
 
 const code = `
   {
@@ -19,5 +18,24 @@ const code = `
   }
 `;
 
-// const r = f(parse(code));
+const obj = {
+  '// msg': 'API Message',
+  msg: 'msg',
+  data: [
+    {
+      author: 'Paul Graham',
+      name: 'Hackers and Painters',
+      '// author': 'Book author',
+      show: true,
+      '// name': 'Book name',
+      age: 100,
+      '// status': 'book status',
+      status: 'DELETED',
+    },
+  ],
+  code: 'OK',
+};
+
 console.log(parse(code));
+console.log('--------------------');
+console.log(stringify(obj));
