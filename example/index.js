@@ -36,6 +36,6 @@ const obj = {
   code: 'OK',
 };
 
-console.log(parse(code));
+// console.log(parse(code));
 console.log('--------------------');
 console.log(stringify(obj));

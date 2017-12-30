@@ -32,7 +32,16 @@ function stringify(source) {
       str = str.slice(0, start - 1) + valueWithComment + str.slice(end - 1);
     }
   });
-  return str;
+  return str
+    .split('\n')
+    .map(item => {
+      const reg = /\/\/.*,$/;
+      if (reg.test(item)) {
+        return item.replace(/,$/, '');
+      }
+      return item;
+    })
+    .join('\n');
 }
 
 function extract(source) {
