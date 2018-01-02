@@ -31,6 +31,7 @@ const code = `
 `;
 
 const obj = {
+
   '// msg': 'API Message',
   msg: 'msg',
   data: [
@@ -40,14 +41,15 @@ const obj = {
       '// author': 'Book author',
       show: true,
       '// name': 'Book name',
-      age: 100,
+      '// age': '年龄',
+      age: 1000,
       '// status': 'book status',
-      status: 'DELETED',
+      status: true,
     },
   ],
   code: 'OK',
 };
 
-console.log(parse(code));
-console.log('--------------------');
-// console.log(stringify(obj));
+// console.log(parse(code));
+// console.log('--------------------');
+console.log(stringify(obj));

@@ -28,7 +28,8 @@ function stringify(source) {
       return item.key === `// ${name}`;
     });
     if (find) {
-      const valueWithComment = `"${value}", // ${find.value}`;
+      const realValue = typeof value === 'string' ? `"${value}"` : value;
+      const valueWithComment = `${realValue}, // ${find.value}`;
       str = str.slice(0, start - 1) + valueWithComment + str.slice(end - 1);
     }
   });
