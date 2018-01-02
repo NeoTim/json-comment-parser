@@ -17,18 +17,17 @@ function parse(source) {
       return obj;
     }
 
-    const temp = obj.constructor();
+    const temp = {};
     for (const key in obj) {
-      if (typeof obj[key] !== 'string') {
+      if (typeof obj[key] === 'object') {
         temp[key] = handleOrigin(obj[key]);
-        continue;
+      } else {
+        const find = comments.find(item => item.key === `// ${key}`);
+        if (find) {
+          temp[`// ${key}`] = find.value;
+        }
+        temp[key] = obj[key];
       }
-
-      const find = comments.find(item => item.key === `// ${key}`);
-      if (find) {
-        temp[`// ${key}`] = find.value;
-      }
-      temp[key] = obj[key];
     }
 
     return temp;
