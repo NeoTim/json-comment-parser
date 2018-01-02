@@ -17,7 +17,7 @@ function parse(source) {
       return obj;
     }
 
-    const temp = {};
+    const temp = obj.constructor();
     for (const key in obj) {
       if (typeof obj[key] === 'object') {
         temp[key] = handleOrigin(obj[key]);
