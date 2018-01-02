@@ -46,7 +46,7 @@ function getComments(source) {
 
   estraverse.replace(ast, {
     enter(node) {
-      if (node.type === 'Identifier') {
+      if (node.type === 'Property') {
         nodes.push(node);
       }
     },
@@ -60,7 +60,7 @@ function getComments(source) {
     });
     if (!find) return {};
     return {
-      key: `// ${find.name}`,
+      key: `// ${find.key.name || find.key.value}`,
       value,
     };
   });

@@ -4,7 +4,7 @@ const { parse, stringify } = require('../lib');
 
 const code = `
   {
-    msg: "msg", // API Message
+    "msg": "msg", // API Message
     data: [
       {
         author: "Paul Graham", // Book author
@@ -36,6 +36,6 @@ const obj = {
   code: 'OK',
 };
 
-// console.log(parse(code));
+console.log(parse(code));
 console.log('--------------------');
-console.log(stringify(obj));
+// console.log(stringify(obj));
