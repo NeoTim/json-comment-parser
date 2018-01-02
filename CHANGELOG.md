@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.4"></a>
+## [1.1.4](https://github.com/forsigner/json-comment-parser/compare/v1.1.3...v1.1.4) (2018-01-02)
+
+
+### Bug Fixes
+
+* fix clone object ([da65e6e](https://github.com/forsigner/json-comment-parser/commit/da65e6e))
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/forsigner/json-comment-parser/compare/v1.1.2...v1.1.3) (2018-01-02)
 
